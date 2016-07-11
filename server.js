@@ -8,6 +8,7 @@ var passport = require('passport');
 var ejs = require('ejs');
 var session = require('express-session');
 var dataController = require('./controllers/data');
+var sqldataController = require('./controllers/sqldata');
 var userController = require('./controllers/user');
 var authController = require('./controllers/auth');
 var clientController = require('./controllers/client');
@@ -31,6 +32,10 @@ var router = express.Router();
 router.route('/data')
 	.post(authController.isAuthenticated,dataController.postData)
 	.get(authController.isAuthenticated,dataController.getDatas);
+
+// create endpoint handler for /data
+router.route('/sqldata')
+	.get(authController.isAuthenticated,sqldataController.getSqlDatas);
 	
 // create endpoint handler for /data/:id
 router.route('/data/:id')
