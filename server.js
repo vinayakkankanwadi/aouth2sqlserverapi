@@ -70,7 +70,6 @@ app.use(bodyParser.urlencoded({
 	extended:true
 }));
 
-
 // Use express session support since OAuth2orize requires it
 app.use(session({
   secret: 'Super Secret Session Key',
