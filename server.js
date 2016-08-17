@@ -82,7 +82,6 @@ app.use(passport.initialize());
 
 app.use('/',router);
 
-
 // Start the server on the port
 var port = 3000;
 app.listen(port);
